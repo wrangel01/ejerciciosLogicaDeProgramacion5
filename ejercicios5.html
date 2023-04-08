@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Logica Programacion 5</title>
+</head>
+<body>
+
+    <h1>Ejercicios Logica Programacion 5</h1>
+
+    <script>
+
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+const contarLetras = (cadena = "") => {
+if( !cadena) return console.warn("No ingresaste una cadena de texo");
+if(typeof cadena !== "string") return console.error(`El valor igresado "${cadena}", No es una cadeta de texto`);
+
+let vocales = 0,
+ consonante = 0;
+
+ cadena = cadena.toLocaleLowerCase();
+
+ for (let letra of cadena) {
+    if(/[AEIOUaeiou]/.test(letra))vocales++;
+    if(/[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]/.test(letra))consonante++;
+    } 
+
+    return console.info({
+        cadena,
+        vocales,
+        consonante
+    })
+}
+contarLetras("Hola Mundo");
+contarLetras("mama");
+contarLetras();
+contarLetras(33);
+contarLetras("ÑOÑO");
+
+
+
+
+
+
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+
+
+    </script>
+    
+</body>
+</html>
