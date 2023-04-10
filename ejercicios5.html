@@ -33,21 +33,52 @@ let vocales = 0,
         consonante
     })
 }
-contarLetras("Hola Mundo");
-contarLetras("mama");
-contarLetras();
-contarLetras(33);
-contarLetras("ÑOÑO");
-
-
-
-
+// contarLetras("Hola Mundo");
+// contarLetras("mama");
+// contarLetras();
+// contarLetras(33);
+// contarLetras("ÑOÑO");
 
 
 
 // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+const validarNombre = (nombre = "") => {
+    if(!nombre)return console.warn ("No ingresaste nombre");
+    if(typeof nombre !== "string") return console.error(`El valor ${nombre} ingresado; no es una cadena de texto`);
+
+    let expReg = /^[A-Za-zAEIOUaeiou\s]+$/g.test(nombre);
+    return (expReg)
+    ?console.info(`${nombre} ES un nombre valido`)
+    :console.info(`${nombre} NO es un nombre valido`);
+
+}
+// validarNombre();
+// validarNombre(3);
+// validarNombre("walter Rangel");
+// validarNombre("walter35");
+
+
 // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 
+
+const validarEmail = (email = "") => {
+
+    if(!email)return console.warn ("No ingresaste nombre");
+    if(typeof email !== "string") return console.error(`El valor ${email} ingresado; no es una cadena de texto`);
+
+    let expReg =/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+    return (expReg)
+    ?console.info(`${email} ES un correo valido`)
+    :console.info(`${email} NO es un correo valido`);
+
+}
+
+validarEmail();
+validarEmail("");
+validarEmail("wrangelfuentes@gmail.com");
+validarEmail("wrangel, fuentes, @gmail.com");
 
 
     </script>
